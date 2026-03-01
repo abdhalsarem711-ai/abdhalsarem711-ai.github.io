@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المركز المحاسبي التعليمي</title>
+  <meta name="description" content="خدمات محاسبية احترافية ودورات تعليمية متخصصة في المحاسبة والتحليل المالي والإكسل." />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111827;
+      --card: rgba(255,255,255,0.08);
+      --card-solid: #ffffff;
+      --text: #e5e7eb;
+      --text-dark: #111827;
+      --muted: #cbd5e1;
+      --primary: #14b8a6;
+      --primary-dark: #0f766e;
+      --secondary: #f59e0b;
+      --accent: #38bdf8;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 18px 45px rgba(0,0,0,0.22);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(20,184,166,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(56,189,248,0.14), transparent 30%),
+        linear-gradient(180deg, #0b1220 0%, #111827 35%, #0f172a 100%);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(11,18,32,0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .2px;
+    }
+
+    .logo span { color: var(--primary); }
+
+    .menu {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: var(--muted);
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: .25s ease;
+    }
+
+    .menu a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero {
+      padding: 88px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(20,184,166,0.16);
+      color: #99f6e4;
+      border: 1px solid rgba(20,184,166,0.28);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: .92rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.28;
+      color: #fff;
+    }
+
+    .hero p {
+      margin: 0 0 24px;
+      font-size: 1.06rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: .25s ease;
+      border: 1px solid transparent;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-card,
+    .glass {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3,
+    .glass h3 {
+      margin-top: 0;
+      color: #fff;
+      font-size: 1.35rem;
+    }
+
+    .hero-card p,
+    .glass p,
+    .hero-card li,
+    .glass li {
+      color: var(--muted);
+    }
+
+    .hero-card ul,
+    .glass ul {
+      margin: 12px 0 0;
+      padding-right: 18px;
+    }
+
+    section {
+      padding: 32px 0 68px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      color: var(--text-dark);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,0.06);
+    }
+
+    .card .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(20,184,166,0.12), rgba(56,189,248,0.14));
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: #0f172a;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #475569;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .cta {
+      padding: 8px 0 70px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(20,184,166,0.18), rgba(245,158,11,0.14));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 34px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    .cta-box p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 22px 0;
+      text-align: right;
+    }
+
+    .contact-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      padding: 20px 0 34px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: .95rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .grid-3,
+      .about-wrap,
+      .contact-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .menu { gap: 6px; }
+      .menu a { font-size: .92rem; padding: 7px 8px; }
+      .hero-card, .glass, .cta-box, .card { padding: 20px; }
+      .btn { width: 100%; text-align: center; }
+      .actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">المركز <span>المحاسبي التعليمي</span></div>
+      <nav class="menu">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#courses">الدورات</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">التواصل</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">خدمات محاسبية ودورات احترافية</span>
+          <h1>نقدّم لك خدمات محاسبية دقيقة وتعليمًا عمليًا يرفع مستواك المهني</h1>
+          <p>
+            موقع احترافي لعرض خدماتك المحاسبية والتسويق لدوراتك التعليمية بشكل أنيق وواضح ومتجاوب مع الجوال.
+            تم تصميمه ليمنح الزائر انطباعًا قويًا وثقة عالية من أول نظرة.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">احجز الآن</a>
+            <a class="btn btn-secondary" href="#courses">استعراض الدورات</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>لماذا هذا الموقع قوي؟</h3>
+          <p>لأنه يجمع بين الجمال البصري والوضوح المهني، ويعرض خدماتك ودوراتك في صفحة واحدة سهلة التصفح.</p>
+          <ul>
+            <li>تصميم عصري بخلفيات احترافية</li>
+            <li>ألوان جذابة ومتناسقة للأزرار والعناصر</li>
+            <li>مناسب للجوال والكمبيوتر</li>
+            <li>جاهز للنشر مباشرة</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>الخدمات المحاسبية</h2>
+          <p>خدمات عملية ومهنية تساعد الأفراد والمنشآت على تنظيم أعمالهم المالية واتخاذ قرارات أفضل.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>إعداد القوائم المالية</h3>
+            <p>إعداد قائمة الدخل، قائمة المركز المالي، قائمة التدفقات النقدية، والتقارير المالية بدقة واحتراف.</p>
+          </div>
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>التحليل المالي</h3>
+            <p>تحليل النسب والمؤشرات المالية، قراءة الأداء، واستخراج نقاط القوة والضعف لدعم القرار.</p>
+          </div>
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>مسك الدفاتر والتقارير</h3>
+            <p>تنظيم القيود اليومية، الترحيل، إعداد ميزان المراجعة، وتجهيز التقارير الدورية للمشاريع والمنشآت.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-title">
+          <h2>الدورات التعليمية</h2>
+          <p>برامج تدريبية عملية موجهة للطلاب والباحثين عن التطوير المهني والتميز في سوق العمل.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">A</div>
+            <h3>دورة المحاسبة المالية</h3>
+            <p>شرح مبسط واحترافي لأساسيات المحاسبة المالية مع أمثلة وتمارين تساعد على الفهم والتطبيق.</p>
+          </div>
+          <div class="card">
+            <div class="icon">B</div>
+            <h3>دورة التحليل المالي</h3>
+            <p>تعلّم قراءة القوائم المالية وتحليل النسب والمؤشرات وتقييم الأداء المالي للمؤسسات.</p>
+          </div>
+          <div class="card">
+            <div class="icon">C</div>
+            <h3>دورة Excel للمحاسبين</h3>
+            <p>تدريب عملي على استخدام الإكسل في الجداول والتقارير والتحليل المالي بكفاءة عالية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-wrap">
+        <div class="glass">
+          <h3>من نحن</h3>
+          <p>
+            نحن نقدم خدمات محاسبية متخصصة إلى جانب دورات تدريبية عملية تهدف إلى تطوير المهارات المهنية ورفع جاهزية الطالب والمتدرب لسوق العمل.
+            نركز على الوضوح، الدقة، والتطبيق الواقعي.
+          </p>
+        </div>
+        <div class="glass">
+          <h3>رؤيتنا</h3>
+          <p>
+            أن نكون جهة موثوقة في تقديم الخدمة المحاسبية والتعليم المالي، من خلال محتوى قوي، تعامل مهني، وتصميم حضور رقمي يليق بقيمة ما نقدمه.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>تواصل معنا الآن</h2>
+          <p>للحجز والاستفسار عن الخدمات المحاسبية أو التسجيل في الدورات التعليمية، تواصل معنا مباشرة.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>رقم التواصل / واتساب</strong>
+              <span><a href="https://wa.me/967774616788" target="_blank" rel="noopener">00967774616788</a></span>
+            </div>
+            <div class="contact-item">
+              <strong>البريد الإلكتروني</strong>
+              <span><a href="mailto:abdh.alsarem.711@gmail.com">abdh.alsarem.711@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/967774616788" target="_blank" rel="noopener">تواصل عبر الواتساب</a>
+            <a class="btn btn-secondary" href="mailto:abdh.alsarem.711@gmail.com">إرسال بريد إلكتروني</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    جميع الحقوق محفوظة © 2026 - المركز المحاسبي التعليمي
+  </footer>
+</body>
+</html>
